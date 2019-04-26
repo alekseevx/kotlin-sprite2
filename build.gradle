@@ -1,0 +1,23 @@
+plugins {
+  id "org.jetbrains.kotlin.konan" version "1.3.30"
+}
+
+konan.targets = ['linux_arm32_hfp']
+konanArtifacts {
+    program('sprite2') {
+        libraries {
+            klibs 'ksdl2', 'ksdl2_test'
+        }
+    }
+
+    interop('ksdl2') {
+        defFile('src/interop/sdl2.def')
+    }
+
+    interop('ksdl2_test') {
+        defFile('src/interop/sdl2_test.def')
+        libraries {
+            klibs 'ksdl2'
+        }
+    }
+}

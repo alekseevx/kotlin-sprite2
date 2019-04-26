@@ -1,0 +1,9 @@
+headers = SDL_test_common.h
+
+headerFilter = SDL_test*
+
+compilerOpts.linux_x64 = -I/home/user/SDL2/include/SDL2 -D_POSIX_SOURCE -D_REENTRANT
+linkerOpts.linux_x64 = -L/home/user/SDL2/lib -lSDL2_test
+
+compilerOpts.linux_arm32_hfp = -I/home/user/tmp/buildroot/staging/usr/include/SDL2 -D_REENTRANT
+linkerOpts.linux_arm32_hfp = -L/home/user/tmp/buildroot/staging/usr/lib -lSDL2_test -lSDL2
